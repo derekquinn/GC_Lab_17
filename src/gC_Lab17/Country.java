@@ -5,16 +5,17 @@ public class Country {
 	// instance variables / fields (same thing)
 	private String name;
 	private int population;
-
+	
+// no argument constructor 
 	public Country() {
 
 	}
-
+	
+// 2 argument constructor
 	public Country(String name, int population) {
 		super();
 		this.name = name;
 		this.population = population;
-
 	}
 
 	public String getName() {
@@ -33,10 +34,9 @@ public class Country {
 		this.population = population;
 
 	}
-
 	@Override
 	public String toString() {
-		return name + "," + population;
+		return name +", "+ population;
 	}
 
 }

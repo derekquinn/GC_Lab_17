@@ -20,13 +20,12 @@ public class CountriesApp {
 
 		if (menuChoice == 1) {
 			CountriesTextFile.readFile();
-		}
-		if (menuChoice == 2) {
+
+		} else if (menuChoice == 2) {
 			// add new country
 
 			System.out.println("New country name: ");
-			name = scnr.nextLine();
-			scnr.nextLine();
+			name = scnr.next();
 
 			System.out.println("Enter population: ");
 			population = scnr.nextInt();
@@ -36,12 +35,12 @@ public class CountriesApp {
 
 			// print list with new country
 
-		}
-		if (menuChoice == 3) {
+		} else if (menuChoice == 3) {
 			// goodbye
 
 		}
-
+		CountriesTextFile.readFile();
+		scnr.close();
 	}
 
 	public static void printMenu() {

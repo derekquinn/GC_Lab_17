@@ -19,18 +19,17 @@ public class CountriesTextFile {
 		}
 
 		List<String> countryList = Arrays.asList(country.toString());
-
 		Files.write(filePath, countryList, StandardOpenOption.APPEND);
-
 	}
 
 	/// trying to get/print players from players.txt by reading the file
+	
 	public static void readFile() throws IOException {
 		/// this read all lines assigns this to a line of strings ("Player, 23" is an
 		/// entire string)
 		List<String> lines = Files.readAllLines(filePath);
 
-		List<Country> countries = new ArrayList<>();
+		//List<Country> ccounountries = new ArrayList<>();
 
 		for (String thisLine : lines) {
 			System.out.println(thisLine);
