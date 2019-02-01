@@ -1,10 +1,6 @@
 package gC_Lab17;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class CountriesApp {
@@ -12,43 +8,50 @@ public class CountriesApp {
 		int menuChoice;
 		String name;
 		int population;
+		String userContinue = "y";
 
-		printMenu();
+		while (userContinue.equalsIgnoreCase("y")) {
 
-		Scanner scnr = new Scanner(System.in);
-		menuChoice = scnr.nextInt();
+			System.out.println("Welcome to WORLD BOOKS ENCYCLOPEDIA 1996 -- TRIAL EDITION");
+			System.out.println("\n");
+			System.out.println("PRESS 1 to see a list of countries.");
+			System.out.println("PRESS 2 to add a new country.");
+			System.out.println("Press 3 to exit.");
+			System.out.println("Press 4 to delete a country.");
 
-		if (menuChoice == 1) {
-			CountriesTextFile.readFile();
+			Scanner scnr = new Scanner(System.in);
+			menuChoice = scnr.nextInt();
 
-		} else if (menuChoice == 2) {
-			// add new country
+			if (menuChoice == 1) {
+				CountriesTextFile.readFile();
 
-			System.out.println("New country name: ");
-			name = scnr.next();
+			} else if (menuChoice == 2) {
+				// add new country
 
-			System.out.println("Enter population: ");
-			population = scnr.nextInt();
+				System.out.println("New country name: ");
+				name = scnr.next();
 
-			Country c1 = new Country(name, population);
-			CountriesTextFile.appendToFile(c1);
+				System.out.println("Enter population: ");
+				population = scnr.nextInt();
 
-			// print list with new country
+				Country c1 = new Country(name, population);
+				CountriesTextFile.appendToFile(c1);
 
-		} else if (menuChoice == 3) {
-			// goodbye
+				// print list with new country
+
+			} else if (menuChoice == 3) {
+				System.out.println("Thanks for trying WORLD BOOKS. To order your copy on CD-ROM call 1-888-333-2222");
+
+			} else if (menuChoice == 4) {
+				System.out.println();
+
+			}
+
+			System.out.println("Do you want to continue? (Y/N)");
+			scnr.nextLine();
+			userContinue = scnr.nextLine();
 
 		}
-		CountriesTextFile.readFile();
-		scnr.close();
-	}
-
-	public static void printMenu() {
-		System.out.println("Welcome to WORLD BOOKS ENCYCLOPEDIA 1996 -- TRIAL EDITION");
-		System.out.println("\n");
-		System.out.println("PRESS 1 to begin your trip around the world.");
-		System.out.println("PRESS 2 to add a new country.");
-		System.out.println("Press 3 to exit.");
 
 	}
 
