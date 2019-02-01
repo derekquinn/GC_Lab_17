@@ -18,18 +18,23 @@ public class Country {
 		this.population = population;
 	}
 
+// getter for name
 	public String getName() {
 		return name;
 	}
+
+//  setter for Name with one param
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+// getter for population
 	public int getPopulation() {
 		return population;
 	}
 
+// setter for population with one param
 	public void setPopulation(int population) {
 		this.population = population;
 
@@ -37,7 +42,7 @@ public class Country {
 
 	@Override
 	public String toString() {
-		
+
 		return name + ", " + population;
 	}
 }
