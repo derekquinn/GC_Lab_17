@@ -1,0 +1,5 @@
+Canada, 2
+Norway, 3
+Switzerland, 2
+Mexico, 4
+
